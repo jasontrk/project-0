@@ -1,3 +1,54 @@
+.godparent {
+  max-width: 1500px;
+}
+
 body {
-  background-color: dodgerblue;
+  background-color: grey;
+}
+
+.top {
+    display: inline-block;
+    width: 960px;
+    height: 540px;
+  }
+.bottom {
+    display: inline-block;
+    width: 560px;
+    height: 140px;
+  }
+
+#movie_picture {
+  width: 260px;
+  height: 350px;
+  color: blue;
+  display: inline-block;
+}
+
+#movie_title {
+  width: 400px;
+  height: 200px;
+  color: blue;
+  display: inline-block;
+}
+
+#game_options {
+  width: 80px;
+  height: 200px;
+  color: blue;
+  display: inline-block;
+}
+
+#logo {
+  color: red;
+  display: inline-block;
+}
+
+#timer {
+  color: red;
+  display: inline-block;
+}
+
+#score {
+  color: red;
+  display: inline-block;
 }
