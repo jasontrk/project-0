@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Movie Matchup</title>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
   <script src="public/js/app.js" charset="utf-8"></script>
   <link rel="stylesheet" href="./public/css/main.css">
 </head>
@@ -15,7 +20,9 @@
   <body>
     <section class="top">
       <div id="movie_picture">MoviePicture</div>
-      <div id="movie_title">MovieTitle</div>
+      <div id="movie_title">
+        <ul id="result_list"></ul>
+      </div>
       <div id="game_options">GameOptions</div>
     </section>
     <section class="bottom">
