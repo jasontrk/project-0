@@ -1,19 +1,5 @@
 $(() => {
   console.log('Guess Movie Game');
-
-  // array with questions and answers
-
-
-
-  console.log('Movie:', currentTitle);
-  const $result = $('#result_list');
-  const $letters = $('#letters_list');
-  const movieTitles = ['SAW', 'SCREAM','PREDATOR','GLADIATOR', 'ROBOCOP', 'SILENCE OF THE LAMBS'];
-  let currentIndex = 0;
-  let currentTitle = movieTitles[currentIndex];
-
-
-
   // rounds
   // let roundsArr = [
   //   'roundOne',
@@ -28,6 +14,25 @@ $(() => {
   //   let score = 10;
   //   $playerScore.html(score);
 
+// change movie title - done
+// clear existing letters_list
+// shuffle the word
+// display shuffled letters
+// display correct image
+
+
+
+  console.log('Movie:', currentTitle);
+  const $result = $('#result_list');
+  const $letters = $('#letters_list');
+  const movieTitles = ['SCREAM', 'PREDATOR', 'ROBOCOP', 'GLADIATOR', 'SILENCE OF THE LAMBS'];
+  let currentIndex = 0;
+  let currentTitle = movieTitles[currentIndex];
+
+  function clearLetters() {
+    $letters.html('');
+    $result.html('');
+  }
 
   // shuffle function
   String.prototype.shuffle = function () {
@@ -50,9 +55,14 @@ $(() => {
     const index = $(e.target).data('index');
     console.log(letter);
     $result.append(`<li data-index=${index}>${letter}</li>`);
+    // console.log($result.text());
+    $result.text() === 'currentTitle';
     if ($result.text() === currentTitle) {
+      clearLetters();
       currentIndex++;
       currentTitle = movieTitles[currentIndex];
+      // console.log(clearLetters());
+
     }
 
 
@@ -80,8 +90,6 @@ $(() => {
   }
 
 
-
-  // if ($result.text() === movieTitles[0])
 
 
   $('#movie_picture').css('background-image', 'url(src/images/predator.jpg)');
