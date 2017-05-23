@@ -1,9 +1,18 @@
 $(() => {
-  console.log('jQuery Loaded');
+  console.log('Guess Movie Game');
 
+  // array with questions and answers
+
+
+  const movieTitles = ['THE SILENCE OF THE LAMBS', 'PREDATOR', 'SCREAM', 'GLADIATOR', 'ROBOCOP'];
+  const currentTitle = movieTitles[0];
+  console.log('1st movie', currentTitle);
   const $result = $('#result_list');
   const $letters = $('#letters_list');
+  const correctWord ='PREDATOR';
 
+
+  // shuffle function
   String.prototype.shuffle = function () {
     var a = this.split(''),
       n = a.length;
@@ -17,6 +26,7 @@ $(() => {
     return a.join('');
   };
 
+  // hiding letters when clicked in the letters_list and show in result_list
   $letters.on('click','li', (e) => {
     $(e.target).hide();
     const letter = $(e.target).text();
@@ -24,9 +34,11 @@ $(() => {
     console.log(letter);
     $result.append(`<li data-index=${index}>${letter}</li>`);
     console.log($result.text());
+    console.log($result.text() === 'PREDATOR');
+
   });
 
-
+  // hiding letters when clicked in result_list and show in letters_list
   $result.on('click', 'li', (e) => {
     const dataIndex = $(e.target).data('index');
     $letters.children().filter((index) => {
@@ -36,17 +48,21 @@ $(() => {
 
     // use the data index to display the particular LI
     // display none the LI we just clicked to move back down
-
     console.log($(e.target));
   });
 
 
-  const correctWord ='PREDATOR';
+// shuffled word
   const shuffledWord =correctWord.shuffle();
   console.log('shuffled word', shuffledWord);
   for (let i=0; i < shuffledWord.length; i++ ) {
     $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
   }
+
+
+
+  // if ($result.text() === movieTitles[0])
+
 
   $('#movie_picture').css('background-image', 'url(src/images/predator.jpg)');
 
@@ -56,27 +72,6 @@ $(() => {
 
 
 });
-
-    // Outside Shuffle function:
-    //
-    // create array before shuffle
-    //     movietitle = title.split('');
-    //     i = 0;
-    //     //ensures the correct number of boxes
-    //     boxes.each(function(){
-    //          $(this).data('letter', movietitle[i]);
-    //          i++;
-    //     });
-
-
-    // const selectLetter = function (letter) {
-    //   document.getElementById(letter.target.id).setAttribute('class', 'hide');
-    //   this.updateResult(letter.target.id, letter.target.innerText);
-    // };
-
-
-  // };
-
 
 
 

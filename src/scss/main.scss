@@ -38,6 +38,9 @@ body {
   height: 300px;
   display: inline-block;
   margin: 82px 42px;
+  border-color: brown;
+  border-radius: 10px;
+  outline: black dotted thick;
 }
 
 #movie_title {
