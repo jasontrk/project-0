@@ -4,12 +4,29 @@ $(() => {
   // array with questions and answers
 
 
-  const movieTitles = ['THE SILENCE OF THE LAMBS', 'PREDATOR', 'SCREAM', 'GLADIATOR', 'ROBOCOP'];
-  const currentTitle = movieTitles[0];
-  console.log('1st movie', currentTitle);
+
+  console.log('Movie:', currentTitle);
   const $result = $('#result_list');
   const $letters = $('#letters_list');
-  const correctWord ='PREDATOR';
+  const movieTitles = ['SAW', 'SCREAM','PREDATOR','GLADIATOR', 'ROBOCOP', 'SILENCE OF THE LAMBS'];
+  let currentIndex = 0;
+  let currentTitle = movieTitles[currentIndex];
+
+
+
+  // rounds
+  // let roundsArr = [
+  //   'roundOne',
+  //   'roundTwo',
+  //   'roundThree',
+  //   'roundFour',
+  //   'roundFive',
+  //   'roundSix'];
+  //
+  //   let level = 0;
+  //
+  //   let score = 10;
+  //   $playerScore.html(score);
 
 
   // shuffle function
@@ -33,8 +50,11 @@ $(() => {
     const index = $(e.target).data('index');
     console.log(letter);
     $result.append(`<li data-index=${index}>${letter}</li>`);
-    console.log($result.text());
-    console.log($result.text() === 'PREDATOR');
+    if ($result.text() === currentTitle) {
+      currentIndex++;
+      currentTitle = movieTitles[currentIndex];
+    }
+
 
   });
 
@@ -52,8 +72,8 @@ $(() => {
   });
 
 
-// shuffled word
-  const shuffledWord =correctWord.shuffle();
+  // shuffled word
+  const shuffledWord =currentTitle.shuffle();
   console.log('shuffled word', shuffledWord);
   for (let i=0; i < shuffledWord.length; i++ ) {
     $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
