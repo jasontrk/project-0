@@ -1,5 +1,43 @@
 
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
 
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+/* Change color of dropdown links on hover */
+.dropdownContent a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
 #result_list, #letters_list {
   list-style: none;
   padding: 0px;
@@ -14,10 +52,11 @@
   }
 }
 #letters_list {
-  margin: 40px 120px;
+  margin: 40px 100px;
+
 }
 #result_list {
-  margin: 34px 45px;
+  margin: 34px 40px;
 }
 
 .container {
@@ -35,7 +74,7 @@ body {
 
 #movie_picture {
   width: 300px;
-  height: 300px;
+  height: 330px;
   display: inline-block;
   margin: 82px 42px;
   border-color: brown;
@@ -47,7 +86,7 @@ body {
   float: left;
   width: 350px;
   height: 100px;
-  background-color: #04ba19;
+  // background-color: #04ba19;
   margin: -398px 430px;
 }
 #letters {
@@ -55,13 +94,13 @@ body {
   width: 500px;
   height: 117px;
   margin: -174px 368px;
-  background-color: #0c89d8;
+  // background-color: #0c89d8;
 }
 
 #game_options {
   width: 250px;
   height: 50px;
-  background-color: green;
+  // background-color: green;
   display: inline-block;
   margin: -260px 159px;
   float: right;

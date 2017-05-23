@@ -25,14 +25,42 @@ $(() => {
 
   const $result = $('#result_list');
   const $letters = $('#letters_list');
-  const movieTitles = ['PREDATOR','SCREAM', 'ROBOCOP', 'GLADIATOR', 'FRIDAYTHE13TH'];
+  // const $hint = $('#dropdown_content');
+  const movieTitles = [{
+    title: 'SAW',
+    image: 'saw.bmp'
+  }, {
+    title: 'SCREAM',
+    image: 'scream.bmp'
+  }, {
+    title: 'IRONMAN',
+    image: 'ironman.bmp'
+  }, {
+    title: 'PREDATOR',
+    image: 'predator.bmp'
+  }, {
+    title: 'ROBOCOP',
+    image: 'robocop.bmp'
+  }, {
+    title: 'GLADIATOR',
+    image: 'gladiator.bmp'
+  }, {
+    title: 'FRIDAY THE 13TH',
+    image: 'fridaythe13th.bmp'
+  }, {
+    title: 'V FOR VENDETTA',
+    image: 'vforvendetta.bmp'
+  }, {
+    title: 'PHANTOM OF THE OPERA',
+    image: 'phantomoftheopera.bmp'
+  }];
   let currentIndex = 0;
   let currentTitle = movieTitles[currentIndex];
   console.log('Movie:', currentTitle);
 
   function congrats() {
     $letters.html('');
-    $result.html('Congrats. <br>On to the next one.');
+    $result.html('Nice. <br>On to the next one.');
   }
   function clearLetters() {
     $letters.html('');
@@ -43,7 +71,7 @@ $(() => {
   // shuffle function
   String.prototype.shuffle = function () {
     var a = this.split(''),
-    n = a.length;
+      n = a.length;
 
     for(var i = n - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -57,12 +85,14 @@ $(() => {
 
   // shuffled word and place in letters
   function displayWord(){
-    const shuffledWord = currentTitle.shuffle();
+    const shuffledWord = currentTitle.title.shuffle();
     $letters.empty();
     // console.log('shuffled word', shuffledWord);
     for (let i=0; i < shuffledWord.length; i++ ) {
       $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
     }
+
+    $('#movie_picture').css('background-image', `url(/src/assets/${currentTitle.image})`);
   }
 
   displayWord();
@@ -74,15 +104,13 @@ $(() => {
     const index = $(e.target).data('index');
     console.log(letter);
     $result.append(`<li data-index=${index}>${letter}</li>`);
-    // console.log($result.text());
-    $result.text() === 'currentTitle';
-    if ($result.text() === currentTitle) {
+    if ($result.text() === currentTitle.title) {
       congrats();
 
       if (currentIndex < movieTitles.length - 1) {
         currentIndex++;
         currentTitle = movieTitles[currentIndex];
-        setTimeout(clearLetters, 2000);
+        setTimeout(clearLetters, 1700);
       } else {
         // game over logic
       }
@@ -110,7 +138,7 @@ $(() => {
   });
 
 
-  $('#movie_picture').css('background-image', 'url(src/images/predator.jpg)');
+  // $('#movie_picture').css('background-image', 'url(src/images/predator.jpg)');
 
   // correct letter pass in. event listener will sit on the li's
   // look into event delegation which is putting an event listener across the whole UL on each LI
