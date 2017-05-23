@@ -14,30 +14,36 @@ $(() => {
   //   let score = 10;
   //   $playerScore.html(score);
 
-// change movie title - done
-// clear existing letters_list
-// shuffle the word
-// display shuffled letters
-// display correct image
+  // change movie title - done
+  // clear existing letters_list
+  // shuffle the word
+  // display shuffled letters
+  // display correct image
 
 
 
-  console.log('Movie:', currentTitle);
+
   const $result = $('#result_list');
   const $letters = $('#letters_list');
-  const movieTitles = ['SCREAM', 'PREDATOR', 'ROBOCOP', 'GLADIATOR', 'SILENCE OF THE LAMBS'];
+  const movieTitles = ['PREDATOR','SCREAM', 'ROBOCOP', 'GLADIATOR', 'FRIDAYTHE13TH'];
   let currentIndex = 0;
   let currentTitle = movieTitles[currentIndex];
+  console.log('Movie:', currentTitle);
 
+  function congrats() {
+    $letters.html('');
+    $result.html('Congrats. <br>On to the next one.');
+  }
   function clearLetters() {
     $letters.html('');
     $result.html('');
+    displayWord();
   }
 
   // shuffle function
   String.prototype.shuffle = function () {
     var a = this.split(''),
-      n = a.length;
+    n = a.length;
 
     for(var i = n - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -47,6 +53,19 @@ $(() => {
     }
     return a.join('');
   };
+
+
+  // shuffled word and place in letters
+  function displayWord(){
+    const shuffledWord = currentTitle.shuffle();
+    $letters.empty();
+    // console.log('shuffled word', shuffledWord);
+    for (let i=0; i < shuffledWord.length; i++ ) {
+      $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
+    }
+  }
+
+  displayWord();
 
   // hiding letters when clicked in the letters_list and show in result_list
   $letters.on('click','li', (e) => {
@@ -58,10 +77,19 @@ $(() => {
     // console.log($result.text());
     $result.text() === 'currentTitle';
     if ($result.text() === currentTitle) {
-      clearLetters();
-      currentIndex++;
-      currentTitle = movieTitles[currentIndex];
+      congrats();
+
+      if (currentIndex < movieTitles.length - 1) {
+        currentIndex++;
+        currentTitle = movieTitles[currentIndex];
+        setTimeout(clearLetters, 2000);
+      } else {
+        // game over logic
+      }
+
+
       // console.log(clearLetters());
+      // return currentTitle.displayWord
 
     }
 
@@ -80,16 +108,6 @@ $(() => {
     // display none the LI we just clicked to move back down
     console.log($(e.target));
   });
-
-
-  // shuffled word
-  const shuffledWord =currentTitle.shuffle();
-  console.log('shuffled word', shuffledWord);
-  for (let i=0; i < shuffledWord.length; i++ ) {
-    $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
-  }
-
-
 
 
   $('#movie_picture').css('background-image', 'url(src/images/predator.jpg)');
