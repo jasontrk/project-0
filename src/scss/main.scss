@@ -43,17 +43,17 @@
   padding: 0px;
   li {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border: 1px solid black;
     text-align: center;
-    line-height: 30px;
+    line-height: 40px;
     cursor: pointer;
+    font-size: 40px;
   }
 }
 #letters_list {
-  margin: 40px 100px;
-
+    margin: 40px 45px;
 }
 #result_list {
   margin: 34px 40px;
@@ -63,13 +63,14 @@
   width: 900px;
   height: 500px;
   margin: 10px auto;
-  background-color: #FFFFFF;
+  background-color: cornflowerblue;
+  // background-image: url(../../public/assets/background.jpg);
   box-shadow: 0px 0px 5px #414141;
   margin: 50px 20px;
 }
 
 body {
-  background-color: grey;
+  background-color: cornsilk;
 }
 
 #movie_picture {
@@ -84,15 +85,15 @@ body {
 
 #movie_title {
   float: left;
-  width: 350px;
-  height: 100px;
+  width: 500px;
+  height: 200px;
   // background-color: #04ba19;
-  margin: -398px 430px;
+  margin: -398px 368px;
 }
 #letters {
   float: left;
   width: 500px;
-  height: 117px;
+  height: 200px;
   margin: -174px 368px;
   // background-color: #0c89d8;
 }

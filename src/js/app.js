@@ -14,45 +14,51 @@ $(() => {
   //   let score = 10;
   //   $playerScore.html(score);
 
-  // change movie title - done
-  // clear existing letters_list
-  // shuffle the word
-  // display shuffled letters
-  // display correct image
 
 
-
-
+  const audio = $('audio')[0];
   const $result = $('#result_list');
   const $letters = $('#letters_list');
-  // const $hint = $('#dropdown_content');
+  const $hint = $('#dropdownHint');
   const movieTitles = [{
     title: 'SAW',
-    image: 'saw.bmp'
+    image: 'saw.bmp',
+    audio: 'saw',
+    hint: 'I want to play a game'
   }, {
     title: 'SCREAM',
-    image: 'scream.bmp'
+    image: 'scream.bmp',
+    audio: 'scream',
+    hint: 'What\'s your favourite Scary Movie?'
   }, {
-    title: 'IRONMAN',
-    image: 'ironman.bmp'
+    title: 'IRON_MAN',
+    image: 'ironman.bmp',
+    audio: 'ironman',
+    hint: 'Heroes aren\'t born. They\'re built.'
   }, {
     title: 'PREDATOR',
-    image: 'predator.bmp'
+    image: 'predator.bmp',
+    audio: 'predator'
   }, {
     title: 'ROBOCOP',
-    image: 'robocop.bmp'
+    image: 'robocop.bmp',
+    audio: 'robocop'
   }, {
     title: 'GLADIATOR',
-    image: 'gladiator.bmp'
+    image: 'gladiator.bmp',
+    audio: 'gladiator'
   }, {
-    title: 'FRIDAY THE 13TH',
-    image: 'fridaythe13th.bmp'
+    title: 'FRIDAY_THE_13TH',
+    image: 'fridaythe13th.bmp',
+    audio: 'fridaythe13th'
   }, {
-    title: 'V FOR VENDETTA',
-    image: 'vforvendetta.bmp'
+    title: 'V_FOR_VENDETTA',
+    image: 'vforvendetta.bmp',
+    audio: 'vforvendetta'
   }, {
-    title: 'PHANTOM OF THE OPERA',
-    image: 'phantomoftheopera.bmp'
+    title: 'PHANTOM_OF_THE_OPERA',
+    image: 'phantomoftheopera.bmp',
+    audio: 'phantomoftheopera'
   }];
   let currentIndex = 0;
   let currentTitle = movieTitles[currentIndex];
@@ -61,6 +67,7 @@ $(() => {
   function congrats() {
     $letters.html('');
     $result.html('Nice. <br>On to the next one.');
+
   }
   function clearLetters() {
     $letters.html('');
@@ -91,8 +98,16 @@ $(() => {
     for (let i=0; i < shuffledWord.length; i++ ) {
       $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
     }
+  // image change when movie title changes
+    $('#movie_picture').css('background-image', `url(public/assets/${currentTitle.image})`);
+  // audio change when movie title changes
+    audio.src = `public/assets/${currentTitle.audio}.mp3`;
+    audio.loop = true;
+    audio.play();
+  // // hint changes when movie title changes
+    // $('#dropdownHint').html;
+    $hint.text(currentTitle.hint);
 
-    $('#movie_picture').css('background-image', `url(/src/assets/${currentTitle.image})`);
   }
 
   displayWord();
@@ -105,12 +120,16 @@ $(() => {
     console.log(letter);
     $result.append(`<li data-index=${index}>${letter}</li>`);
     if ($result.text() === currentTitle.title) {
+      audio.src = `public/assets/correct.mp3`;
+      audio.loop = false;
+      audio.play();
       congrats();
+
 
       if (currentIndex < movieTitles.length - 1) {
         currentIndex++;
         currentTitle = movieTitles[currentIndex];
-        setTimeout(clearLetters, 1700);
+        setTimeout(clearLetters, 1800);
       } else {
         // game over logic
       }
@@ -138,7 +157,6 @@ $(() => {
   });
 
 
-  // $('#movie_picture').css('background-image', 'url(src/images/predator.jpg)');
 
   // correct letter pass in. event listener will sit on the li's
   // look into event delegation which is putting an event listener across the whole UL on each LI
@@ -157,3 +175,11 @@ $(() => {
 //Mike: Split film, create a for loop and append to DOM.
 
 //Stackoverflow: You don't need to hide the letters, use data-attributes to identify the right position of them in the Movie Title container and append that in the empty boxes. The letters that doesn't correspond to the movie title just put with data-attributes empty and your algorithm will filter that putting a red border into selected wrong letter and stuff;
+
+// change movie title - done
+// clear existing letters_list - done
+// shuffle the word - done
+// display shuffled letters - done
+// display correct image and change for title - done
+// play correct audio and change for title - done
+// give hint value in each object and change each title -
