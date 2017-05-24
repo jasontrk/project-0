@@ -14,47 +14,76 @@ $(() => {
   //   let score = 10;
   //   $playerScore.html(score);
 
+  // let timeleft = 30;
+  // const downloadTimer = setInterval(function(){
+  //   document.getElementById('progressBar').value = 30 - --timeleft;
+  //   if(timeleft <= 0)
+  //     clearInterval(downloadTimer);
+  // },1000);
 
+  let timerId = null;
+
+  function progress(timeleft, timetotal, $element) {
+    clearTimeout(timerId);
+    var progressBarWidth = timeleft * $element.width() / timetotal;
+    $element.find('#bar').animate({ width: progressBarWidth }, 500).html(timeleft + 's');
+    if(timeleft > 0) {
+      timerId = setTimeout(function() {
+        progress(timeleft - 1, timetotal, $element);
+      }, 1000);
+    }
+
+  }
+
+  progress(30, 30, $('#progressBar'));
 
   const audio = $('audio')[0];
   const $result = $('#result_list');
   const $letters = $('#letters_list');
   const $hint = $('#dropdownHint');
+
   const movieTitles = [{
-    title: 'SAW',
-    image: 'saw.bmp',
-    audio: 'saw',
-    hint: 'I want to play a game'
-  }, {
     title: 'SCREAM',
     image: 'scream.bmp',
     audio: 'scream',
     hint: 'What\'s your favourite Scary Movie?'
+
   }, {
-    title: 'IRON_MAN',
+    title: 'IRONMAN',
     image: 'ironman.bmp',
     audio: 'ironman',
     hint: 'Heroes aren\'t born. They\'re built.'
+
   }, {
     title: 'PREDATOR',
     image: 'predator.bmp',
-    audio: 'predator'
+    audio: 'predator',
+    hint: 'Soon the hunt will begin.'
   }, {
     title: 'ROBOCOP',
     image: 'robocop.bmp',
-    audio: 'robocop'
+    audio: 'robocop',
+    hint: 'Part man. Part machine. All cop.'
+  }, {
+    title: 'BATMAN_VS_SUPERMAN',
+    image: 'batmanvssuperman.bmp',
+    audio: 'batmanvssuperman',
+    hint: 'Dawn of Justice'
   }, {
     title: 'GLADIATOR',
     image: 'gladiator.bmp',
-    audio: 'gladiator'
+    audio: 'gladiator',
+    hint: 'Father of a murdered son, husband to a murdered wife and I shall have my vengeance in this life or the next.'
   }, {
     title: 'FRIDAY_THE_13TH',
     image: 'fridaythe13th.bmp',
-    audio: 'fridaythe13th'
+    audio: 'fridaythe13th',
+    hint: 'Fridays will never be the same again.'
   }, {
     title: 'V_FOR_VENDETTA',
     image: 'vforvendetta.bmp',
-    audio: 'vforvendetta'
+    audio: 'vforvendetta',
+    hint: 'Remember, remember the 5th of November.'
   }, {
     title: 'PHANTOM_OF_THE_OPERA',
     image: 'phantomoftheopera.bmp',
@@ -98,6 +127,7 @@ $(() => {
     for (let i=0; i < shuffledWord.length; i++ ) {
       $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
     }
+    progress(30, 30, $('#progressBar'));
   // image change when movie title changes
     $('#movie_picture').css('background-image', `url(public/assets/${currentTitle.image})`);
   // audio change when movie title changes
@@ -107,6 +137,7 @@ $(() => {
   // // hint changes when movie title changes
     // $('#dropdownHint').html;
     $hint.text(currentTitle.hint);
+
 
   }
 
@@ -120,6 +151,7 @@ $(() => {
     console.log(letter);
     $result.append(`<li data-index=${index}>${letter}</li>`);
     if ($result.text() === currentTitle.title) {
+      clearTimeout(timerId);
       audio.src = `public/assets/correct.mp3`;
       audio.loop = false;
       audio.play();

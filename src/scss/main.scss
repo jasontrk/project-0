@@ -1,6 +1,23 @@
+#progressBar {
+  height: 22px;
+  background-color: red;
+  color: black;
+  width: 40%;
+  margin: 10px 95px;
+}
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px;
+  width: 0;
+  background-color: #4CAF50;
+  box-sizing: border-box;
+}
 
 /* Dropdown Button */
-.dropbtn {
+.dropbtn, .restart {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
@@ -38,6 +55,7 @@
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
 #result_list, #letters_list {
   list-style: none;
   padding: 0px;
@@ -45,7 +63,7 @@
     display: inline-block;
     width: 40px;
     height: 40px;
-    border: 1px solid black;
+    border: 3px solid peru;
     text-align: center;
     line-height: 40px;
     cursor: pointer;
@@ -88,15 +106,18 @@ body {
   width: 500px;
   height: 200px;
   // background-color: #04ba19;
-  margin: -398px 368px;
+  margin: -400px 368px;
+  color: black
 }
 #letters {
   float: left;
   width: 500px;
   height: 200px;
-  margin: -174px 368px;
-  // background-color: #0c89d8;
+  margin: -200px 368px;
+  color: black;
+
 }
+
 
 #game_options {
   width: 250px;
