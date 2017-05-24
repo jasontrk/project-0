@@ -1,26 +1,13 @@
 $(() => {
   console.log('Guess Movie Game');
-  // rounds
-  // let roundsArr = [
-  //   'roundOne',
-  //   'roundTwo',
-  //   'roundThree',
-  //   'roundFour',
-  //   'roundFive',
-  //   'roundSix'];
-  //
-  //   let level = 0;
-  //
-  //   let score = 10;
-  //   $playerScore.html(score);
 
-  // let timeleft = 30;
-  // const downloadTimer = setInterval(function(){
-  //   document.getElementById('progressBar').value = 30 - --timeleft;
-  //   if(timeleft <= 0)
-  //     clearInterval(downloadTimer);
-  // },1000);
 
+  function hideWelcome() {
+    $('.show').slideToggle('slow');
+    $('.logo').show();
+  }
+
+  $('#welcomeBtn').on('click', hideWelcome);
   let timerId = null;
 
   function progress(timeleft, timetotal, $element) {
@@ -32,6 +19,9 @@ $(() => {
         progress(timeleft - 1, timetotal, $element);
       }, 1000);
     }
+    if(timeleft < 1){
+      clearLetters();
+    }
 
   }
 
@@ -41,6 +31,7 @@ $(() => {
   const $result = $('#result_list');
   const $letters = $('#letters_list');
   const $hint = $('#dropdownHint');
+
 
   const movieTitles = [{
     title: 'SCREAM',
@@ -204,10 +195,6 @@ $(() => {
 
 // Work on the shuffle function and figure out how to make each shuffled letter clickable as well as make it dissapear and show in the 'movie title' div. The letters will be placed in order of clicks and answer is only correct when letters are in the right order. Use the splited array with a forEach statement when creating the boxes.
 
-//Mike: Split film, create a for loop and append to DOM.
-
-//Stackoverflow: You don't need to hide the letters, use data-attributes to identify the right position of them in the Movie Title container and append that in the empty boxes. The letters that doesn't correspond to the movie title just put with data-attributes empty and your algorithm will filter that putting a red border into selected wrong letter and stuff;
-
 // change movie title - done
 // clear existing letters_list - done
 // shuffle the word - done
@@ -215,3 +202,8 @@ $(() => {
 // display correct image and change for title - done
 // play correct audio and change for title - done
 // give hint value in each object and change each title -
+
+//Tips:
+//Mike: Split film, create a for loop and append to DOM.
+
+//Stackoverflow: You don't need to hide the letters, use data-attributes to identify the right position of them in the Movie Title container and append that in the empty boxes. The letters that doesn't correspond to the movie title just put with data-attributes empty and your algorithm will filter that putting a red border into selected wrong letter and stuff;
