@@ -111,7 +111,7 @@ $(() => {
     for (let i=0; i < shuffledWord.length; i++ ) {
       $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
     }
-    progress(10, 10, $('#progressBar'));
+    progress(15, 15, $('#progressBar'));
 
     // image change when movie title changes
     $('#movie_picture').css('background-image', `url(public/assets/${currentTitle.image})`);
@@ -135,6 +135,8 @@ $(() => {
   function restartGame(){
     $('.gameover').hide();
     $('.gameRunning').show();
+    currentIndex = 0;
+    currentTitle = movieTitles[currentIndex];
     displayWord();
   }
   $('#restartBtn').on('click', restartGame);
@@ -161,6 +163,7 @@ $(() => {
         setTimeout(displayWord, 1800);
       } else {
         // game over logic
+
       }
 
 
