@@ -4,54 +4,59 @@
   <meta charset="UTF-8">
   <title>Movie Matchup</title>
   <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous">
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
   </script>
   <script src="public/js/app.js" charset="utf-8"></script>
   <link rel="stylesheet" href="./public/css/main.css">
 </head>
-<main class="container">
-  <audio src=""></audio>
-  <header class="headers">
-    <header id="logo">LOGO HERE</header>
-  </header>
   <body>
-    <header>
-  <section class="welcome show">
-    <h3>Instructions</h3>
-    <p>Welcome to GUESS THAT MOVIE, a movie trivia game, where the concept of the game is very simple: Guess the movie title using the scrambled title. Should you make a mistake, simply click on the letter again to return it to it's original location. <br>You will have the aid of an artistic poster, a theme song from the movie in question and should you really need it, a hint - which will get you to the next round before your 30 seconds are up! Ready?</p>
-    <button type="button" name="button" id="welcomeBtn">LET'S GO!</button>
-  </section>
-</header>
-    <section class="top">
-      <div id="movie_picture"></div>
-      <div id="movie_title">
-        <div id="progressBar">
-          <div id="bar"></div>
+    <main class="container">
+    <audio src=""></audio>
+    <header class="headers">
+      <h1 id="logo">LOGO HERE</h1>
+    </header>
+
+    <section class="welcome">
+      <p>Welcome to 'GUESS THAT MOVIE!', a movie trivia game, where the concept of the game is very simple; click on the scrambled word to correctly - you guessed it, GUESS THAT MOVIE. <br>Should you make a mistake, click on the letter again to return it to it's original position. <br>You will have the aid of an artistic poster, a theme song from the movie in question and should you really need it, a hint. You have 30 seconds to guess each movie.<br> Ready?</p>
+      <button type="button" name="button" id="welcomeBtn">LET'S GO!</button>
+    </section>
+
+    <div class="gameRunning">
+      <section class="top">
+        <div id="movie_picture"></div>
+        <div id="movie_title">
+          <div id="progressBar">
+            <div id="bar"></div>
+          </div>
+          <ul id="result_list"></ul>
         </div>
-        <ul id="result_list"></ul>
-      </div>
-      <div id="game_options">
-      <div class="dropdown">
-  <button class="dropbtn">Hint</button>
-  <div class="dropdownContent">
-    <p id="dropdownHint"></p>
-  </div>
-</div>
-      <!-- <button id="restart">Restart</button> -->
-      </div>
-    </section>
-    <section class="bottom">
-      <div id="letters">
-        <ul id="letters_list">
-        <!--  JS inserts letters here -->
-        </ul>
-      </div>
-    </section>
-  <footer></footer>
+        <div id="game_options">
+          <div class="dropdown">
+            <button class="dropbtn">Hint</button>
+            <div class="dropdownContent">
+              <p id="dropdownHint"></p>
+            </div>
+          </div>
+          <!-- <button id="restart">Restart</button> -->
+        </div>
+      </section>
+      <section class="bottom">
+        <div id="letters">
+          <ul id="letters_list">
+            <!--  JS inserts letters here -->
+          </ul>
+        </div>
+      </section>
+    </div>
 
+    <section class="gameover">
+      <p>YOU SUCK. GAMEOVER.</p>
+      <button type="button" name="restart" id="restartBtn">RESTART</button>
+    </section>
 
-</body>
-</main>
+    </main>
+    <footer></footer>
+  </body>
 </html>
