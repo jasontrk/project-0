@@ -7,49 +7,49 @@ $(() => {
   const $hint = $('#dropdownHint');
   const $gameOver = $('.gameover');
   const $runGame = $('.gameRunning');
+  const $winGame = $('.winner');
   const movieTitles = [{
     title: 'SCREAM',
     image: 'scream.bmp',
     audio: 'scream',
     hint: 'What\'s your favourite Scary Movie?'
-
   }, {
     title: 'IRONMAN',
     image: 'ironman.bmp',
     audio: 'ironman',
     hint: 'Heroes aren\'t born. They\'re built.'
-
-  }, {
-    title: 'PREDATOR',
-    image: 'predator.bmp',
-    audio: 'predator',
-    hint: 'Soon the hunt will begin.'
   }, {
     title: 'ROBOCOP',
     image: 'robocop.bmp',
     audio: 'robocop',
     hint: 'Part man. Part machine. All cop.'
   }, {
+    title: 'PREDATOR',
+    image: 'predator.bmp',
+    audio: 'predator',
+    hint: 'Soon the hunt will begin.'
+  }, {
     title: 'GLADIATOR',
     image: 'gladiator.bmp',
     audio: 'gladiator',
     hint: 'Father of a murdered son, husband to a murdered wife and I shall have my vengeance in this life or the next.'
   }, {
-    title: 'FRIDAY_THE_13TH',
-    image: 'fridaythe13th.bmp',
-    audio: 'fridaythe13th',
-    hint: 'Fridays will never be the same again.'
-  }, {
-    title: 'V_FOR_VENDETTA',
+    title: 'V FOR VENDETTA',
     image: 'vforvendetta.bmp',
     audio: 'vforvendetta',
     hint: 'Remember, remember the 5th of November.'
   }, {
-    title: 'PHANTOM_OF_THE_OPERA',
-    image: 'phantomoftheopera.bmp',
-    audio: 'phantomoftheopera'
+    title: 'SILENCE OF THE LAMBS',
+    image: 'silenceofthelambs.bmp',
+    audio: 'silenceofthelambs',
+    hint: 'Hello Clarice...'
   }, {
-    title: 'BATMAN_VS_SUPERMAN',
+    title: 'FRIDAY THE 13TH',
+    image: 'fridaythe13th.bmp',
+    audio: 'fridaythe13th',
+    hint: 'Fridays will never be the same again.'
+  }, {
+    title: 'BATMAN VS SUPERMAN',
     image: 'batmanvssuperman.bmp',
     audio: 'batmanvssuperman',
     hint: 'BvS: Dawn of Justice'
@@ -113,7 +113,7 @@ $(() => {
     for (let i=0; i < shuffledWord.length; i++ ) {
       $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
     }
-    progress(25, 25, $('#progressBar'));
+    progress(30, 30, $('#progressBar'));
 
     // image change when movie title changes
     $('#movie_picture').css('background-image', `url(public/assets/${currentTitle.image})`);
@@ -126,7 +126,7 @@ $(() => {
     $hint.text(currentTitle.hint);
   }
 
-// start on welcome screen. click button to hide welcome page and run game
+  // start on welcome screen. click button to hide welcome page and run game
   function hideWelcome() {
     $('.welcome').fadeOut();
     displayWord();
@@ -136,7 +136,9 @@ $(() => {
   //restart game
   function restartGame(){
     $gameOver.hide();
+    $winGame.hide();
     $runGame.show();
+    $winGame.hide();
     currentIndex = 0;
     currentTitle = movieTitles[currentIndex];
     displayWord();
@@ -165,13 +167,11 @@ $(() => {
         setTimeout(displayWord, 1800);
       } else {
         // game over logic
+        $runGame.hide();
+        $winGame.show();
+        $('#restartBtn2').on('click', restartGame);
 
       }
-
-
-      // console.log(clearLetters());
-      // return currentTitle.displayWord
-
     }
 
 

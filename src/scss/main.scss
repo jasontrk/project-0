@@ -6,52 +6,103 @@ header {
   margin: 0;
 
 }
+
 .container {
   width: 900px;
-  height: 500px;
+  height: 580px;
   margin: 10px auto;
   background-color: cornflowerblue;
   // background-image: url(../../public/assets/background.jpg);
   box-shadow: 0px 0px 5px #414141;
-  margin: 50px 20px;
+  margin: 70px 10px;
 }
+
 //welcome page
 .welcome {
   width: 900px;
-  height: 500px;
+  height: 580px;
   margin: 10px auto;
   background-color: cornflowerblue;
   box-shadow: 0px 0px 5px #414141;
-  margin: -80px 0px;
+  margin: 0px 0px;
   overflow: hidden;
   position: absolute;
   z-index: 2;
 
+  #logo1 {
+    padding-left: 320px;
+  }
+
   p {
-    margin:0;
     line-height: 35px;
     font-size: 20px;
     text-align: center;
     text-transform: uppercase;
-    margin: 55px 0px;
+    margin: -20px 0;
+    padding: 50px;
+
   }
   &.welcome.hide {
     height: 0px;
   }
   button {
     display: block;
-    margin: -20px auto;
+    margin: -17px auto;
     color: black;
     padding: 20px;
     box-shadow: 0px 0px 5px black;
     border: 2px solid;
     border-radius: 25px;
+    display: inline-block;
+    display:block;
+    position: relative;
+    background-color: #f6e1a6;
+    background: linear-gradient(to bottom, #d8bd72, #fae1a6);
+    height: 30px;
+    width: 100px;
+
+    border-radius: 7px;
+    box-shadow: 0px 3px 5px #000;
+    border-top-width: 1px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #f8e6b1;
+    border-right-color: #f8e6b1;
+    border-bottom-color: #cab06b;
+    border-left-color: #f8e6b1;
+    user-select: none;
+    cursor: pointer;
+
 
   }
 }
 
+.winner {
+  margin: -60px 0px;
+  #logo4 {
+    margin-left: 320px;
+    margin-top: 20px;
+  }
+}
+.gameover {
+  margin: -60px 0px;
+  #logo3 {
+    margin-left: 320px;
+    margin-top: 20px;
+  }
+}
 .gameRunning {
   margin: -60px 0px;
+  #logo2 {
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 20px;
+  }
 }
 
 // game over
@@ -59,35 +110,23 @@ header {
 .gameover {
   display: none;
   width: 900px;
-  height: 500px;
+  height: 580px;
   background-color: cornflowerblue;
   box-shadow: 0px 0px 5px #414141;
-  margin: -80px auto;
+  margin: -60px 0px;
   // overflow: hidden;
-  position: absolute;
+  // position: absolute;
   z-index: 1;
-  // &.gameover {
-    // display: none;
-    // width: 900px;
-    // height: 500px;
-    // margin: 10px auto;
-    // background-color: cornflowerblue;
-    // box-shadow: 0px 0px 5px #414141;
-    // margin: -20px 0px;
-    // overflow: hidden;
-    // position: absolute;
-    // z-index: 1;
 
-    & p {
-      margin:0;
-      line-height: 35px;
-      font-size: 20px;
-      text-align: center;
-      text-transform: uppercase;
-      margin: 55px 0px;
-    }
+  & p {
+    margin:0;
+    line-height: 35px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 55px 0px;
+  }
 
-  // }
   &.gameover.hide {
     height: 0px;
   }
@@ -103,13 +142,49 @@ header {
   }
 }
 
+.winner {
+  display: none;
+  width: 900px;
+  height: 580px;
+  background-color: cornflowerblue;
+  box-shadow: 0px 0px 5px #414141;
+  margin: -60px 0px;
+  // overflow: hidden;
+  position: absolute;
+  z-index: 0;
+
+  & p {
+    margin:0;
+    line-height: 35px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 55px 0px;
+  }
+
+
+  // }
+  &.winner.hide {
+    height: 0px;
+  }
+  & button {
+    display: block;
+    margin: -20px auto;
+    color: black;
+    padding: 20px;
+    box-shadow: 0px 0px 5px black;
+    border: 2px solid;
+    border-radius: 25px;
+
+  }
+}
 
 #progressBar {
   height: 22px;
   background-color: red;
   color: black;
   width: 40%;
-  margin: 10px 95px;
+  margin: -27px 95px;
 }
 
 #progressBar div {
@@ -124,32 +199,42 @@ header {
 
 /* Dropdown Button */
 .dropbtn, .restart {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    margin: 12px 26px;
+  -moz-box-shadow: 0px 10px 14px -7px #3e7327;
+	-webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdownContent {
-    display: none;
-    position: fixed;
-    margin: -65px -50px;
-    background-color: #f9f9f9;
-    // z-index: 2;
-    border: 5px;
-    border-radius: 50px;
-    line-height: 15px;
-    font-size: 20px;
+  display: none;
+  position: fixed;
+  margin: -65px -50px;
+  background-color: #f9f9f9;
+  // z-index: 2;
+  border: 5px;
+  border-radius: 50px;
+  line-height: 15px;
+  font-size: 20px;
 
 }
 
@@ -159,13 +244,13 @@ header {
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdownContent {
-    display: block;
-    padding: 5px;
+  display: block;
+  padding: 5px;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 
 #result_list, #letters_list {
@@ -202,7 +287,7 @@ header {
   }
 }
 #letters_list {
-    margin: 40px 45px;
+  margin: 40px 45px;
 }
 #result_list {
   margin: 34px 40px;
@@ -218,50 +303,34 @@ body {
   width: 300px;
   height: 330px;
   display: inline-block;
-  margin: 82px 42px;
+  margin: 155px 45px;
   border-color: brown;
   border-radius: 10px;
-  outline: black dotted thick;
+  border:5px white solid;
 }
 
 #movie_title {
   float: left;
-  width: 500px;
-  height: 200px;
+  width: 460px;
+  height: 220px;
   // background-color: #04ba19;
-  margin: -400px 368px;
+  margin: -466px 368px;
   color: black
 }
 #letters {
   float: left;
-  width: 500px;
-  height: 200px;
-  margin: -200px 368px;
+  width: 460px;
+  height: 220px;
+  margin: -265px 368px;
   color: black;
 
 }
-
 
 #game_options {
   width: 250px;
   height: 50px;
   // background-color: green;
   display: inline-block;
-  margin: -260px 159px;
+  margin: -316px 159px;
   float: right;
-}
-
-#logo {
-  color: red;
-  display: inline-block;
-}
-
-#timer {
-  color: red;
-  display: inline-block;
-}
-
-#score {
-  color: red;
-  display: inline-block;
 }

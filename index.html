@@ -11,20 +11,20 @@
   <script src="public/js/app.js" charset="utf-8"></script>
   <link rel="stylesheet" href="./public/css/main.css">
 </head>
-  <body>
-    <main class="container">
+<header>
+</header>
+<body>
+  <main class="container">
     <audio src=""></audio>
-    <header class="headers">
-      <h1 id="logo">LOGO HERE</h1>
-    </header>
-
     <section class="welcome">
-      <p>Welcome to 'GUESS THAT MOVIE!', a movie trivia game, where the concept of the game is very simple; click on the scrambled word to correctly - you guessed it, GUESS THAT MOVIE. <br>Should you make a mistake, click on the letter again to return it to it's original position. <br>You will have the aid of an artistic poster, a theme song from the movie in question and should you really need it, a hint. You have 30 seconds to guess each movie.<br> Ready?</p>
+      <img id="logo1" src="./public/assets/GTMlogo270x235.png" alt="Logo1">
+      <p>Welcome to 'GUESS THAT MOVIE'. The concept of this movie trivia game is very simple; click on the scrambled word to correctly - you guessed it, GUESS THAT MOVIE! Should you make a mistake, click on the letter again to return it. You will have the aid of an artistic poster, a theme song from the movie in question and should you need it, a hint. You have 30 seconds to guess each movie. Ready?</p>
       <button type="button" name="button" id="welcomeBtn">LET'S GO!</button>
     </section>
 
     <div class="gameRunning">
       <section class="top">
+        <img id="logo2" src="./public/assets/guessthatmovielogo2.png" alt="Logo2">
         <div id="movie_picture"></div>
         <div id="movie_title">
           <div id="progressBar">
@@ -39,9 +39,9 @@
               <p id="dropdownHint"></p>
             </div>
           </div>
-          <!-- <button id="restart">Restart</button> -->
         </div>
       </section>
+
       <section class="bottom">
         <div id="letters">
           <ul id="letters_list">
@@ -52,15 +52,17 @@
     </div>
 
     <section class="gameover">
-      <p>YOU SUCK. GAMEOVER.</p>
+      <img id="logo3" src="./public/assets/GTMlogo270x235.png" alt="Logo3">
+      <p>“It is not our abilities that show what we truly are. It is our choices.”<i> - Albus Dumbledore.</i></p>
+      <p>Choose the right letters next time!</p>
       <button type="button" name="restart" id="restartBtn">RESTART</button>
     </section>
-    <!-- <section class="winner">
-      <p>WINNER WINNER CHICKEN DINNER</p>
-      <p>You clearly watch too many movies. You should share this game with a friend and if they're as good as you. Click to try again.</p>
+    <section class="winner">
+      <img id="logo4" src="./public/assets/GTMlogo270x235.png" alt="Logo4">
+      <p>“Great men are not born great, they grow great.”<i> - The Godfather.</i><br>9/9. Welcome to greatness. Share with a friend and see if they can match your skills or try again!</p>
       <button type="button" name="restart" id="restartBtn2">RESTART</button>
-    </section> -->
-    </main>
-    <footer></footer>
-  </body>
+    </section>
+  </main>
+  <footer></footer>
+</body>
 </html>
