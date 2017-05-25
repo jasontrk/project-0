@@ -17,31 +17,28 @@ header {
 }
 //welcome page
 .welcome {
-  &.welcome {
-    width: 900px;
-    height: 500px;
-    margin: 10px auto;
-    background-color: cornflowerblue;
-    box-shadow: 0px 0px 5px #414141;
-    margin: -80px 0px;
-    overflow: hidden;
-    position: absolute;
-    z-index: 2;
+  width: 900px;
+  height: 500px;
+  margin: 10px auto;
+  background-color: cornflowerblue;
+  box-shadow: 0px 0px 5px #414141;
+  margin: -80px 0px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
 
-    & p {
-      margin:0;
-      line-height: 35px;
-      font-size: 20px;
-      text-align: center;
-      text-transform: uppercase;
-      margin: 55px 0px;
-    }
-
+  p {
+    margin:0;
+    line-height: 35px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 55px 0px;
   }
   &.welcome.hide {
     height: 0px;
   }
-  & button {
+  button {
     display: block;
     margin: -20px auto;
     color: black;
@@ -118,7 +115,7 @@ header {
 #progressBar div {
   height: 100%;
   text-align: right;
-  padding: 0 10px;
+  padding: 0;
   line-height: 22px;
   width: 0;
   background-color: #4CAF50;
@@ -176,13 +173,32 @@ header {
   padding: 0px;
   li {
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 3px solid peru;
+    display:block;
+    position: relative;
+    background-color: #f6e1a6;
+    background: linear-gradient(to bottom, #d8bd72, #fae1a6);
+    height: 30px;
+    width: 30px;
+    line-height: 2;
+    border-radius: 7px;
+    box-shadow: 0px 3px 5px #000;
+    float: left;
     text-align: center;
-    line-height: 40px;
+    border-top-width: 1px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #f8e6b1;
+    border-right-color: #f8e6b1;
+    border-bottom-color: #cab06b;
+    border-left-color: #f8e6b1;
+    user-select: none;
     cursor: pointer;
-    font-size: 40px;
+    margin-right: 5px;
   }
 }
 #letters_list {

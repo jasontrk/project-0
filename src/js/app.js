@@ -5,6 +5,8 @@ $(() => {
   const $result = $('#result_list');
   const $letters = $('#letters_list');
   const $hint = $('#dropdownHint');
+  const $gameOver = $('.gameover');
+  const $runGame = $('.gameRunning');
   const movieTitles = [{
     title: 'SCREAM',
     image: 'scream.bmp',
@@ -28,11 +30,6 @@ $(() => {
     audio: 'robocop',
     hint: 'Part man. Part machine. All cop.'
   }, {
-    title: 'BATMAN_VS_SUPERMAN',
-    image: 'batmanvssuperman.bmp',
-    audio: 'batmanvssuperman',
-    hint: 'Dawn of Justice'
-  }, {
     title: 'GLADIATOR',
     image: 'gladiator.bmp',
     audio: 'gladiator',
@@ -51,6 +48,11 @@ $(() => {
     title: 'PHANTOM_OF_THE_OPERA',
     image: 'phantomoftheopera.bmp',
     audio: 'phantomoftheopera'
+  }, {
+    title: 'BATMAN_VS_SUPERMAN',
+    image: 'batmanvssuperman.bmp',
+    audio: 'batmanvssuperman',
+    hint: 'BvS: Dawn of Justice'
   }];
 
   let currentIndex = 0;
@@ -68,9 +70,9 @@ $(() => {
     }
     if(timeleft === 0){
       console.log(audio);
-      $('.gameRunning').hide();
+      $runGame.hide();
       audio.pause();
-      $('.gameover').fadeIn();
+      $gameOver.fadeIn();
       clearLetters();
     }
   }
@@ -111,7 +113,7 @@ $(() => {
     for (let i=0; i < shuffledWord.length; i++ ) {
       $letters.append(`<li data-index=${i}>${shuffledWord[i]}</li>`);
     }
-    progress(15, 15, $('#progressBar'));
+    progress(25, 25, $('#progressBar'));
 
     // image change when movie title changes
     $('#movie_picture').css('background-image', `url(public/assets/${currentTitle.image})`);
@@ -133,8 +135,8 @@ $(() => {
 
   //restart game
   function restartGame(){
-    $('.gameover').hide();
-    $('.gameRunning').show();
+    $gameOver.hide();
+    $runGame.show();
     currentIndex = 0;
     currentTitle = movieTitles[currentIndex];
     displayWord();
