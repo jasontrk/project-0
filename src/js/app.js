@@ -32,7 +32,7 @@ $(() => {
     title: 'GLADIATOR',
     image: 'gladiator.bmp',
     audio: 'gladiator',
-    hint: 'Father of a murdered son, husband to a murdered wife and I shall have my vengeance in this life or the next.'
+    hint: 'Father of a murdered son, husband to a murdered wife..'
   }, {
     title: 'V FOR VENDETTA',
     image: 'vforvendetta.bmp',
@@ -160,7 +160,7 @@ $(() => {
       audio.play();
       congrats();
 
-      // move on to the next title function and call on clear letters function. If no titles left, execute win screen logic 
+      // move on to the next title function and call on clear letters function. If no titles left, execute win screen logic
       if (currentIndex < movieTitles.length - 1) {
         currentIndex++;
         currentTitle = movieTitles[currentIndex];

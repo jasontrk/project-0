@@ -46,7 +46,7 @@ My first real challenge was understanding how to have my game run through a list
 
 A big challenge was fixing my Funct-eption'esque code. I spent hours trying to stop functions clashing with each other as I had functions within functions, some of which were in loops. Examples of the issues were when my letters would be duplicated and progress bar visually behaving erratic like it was moving to a dubstep beat. My instructor, Mike, rescued my code by pulling functions out of my main 'runGame' function and in the end, there wasn't even a function left in it! I wasted some time due to simple syntax errors such as forgetting to put in a capital letter or invoking functions. Going forward, this experience will make me aware of doing these things correctly.
 
-I also had difficulty getting my welcome, game over and winner screen to appear correctly. They would be pushed down due to the order they sit in my HTML. I learnt about using the Z-index and using absolute positioning to sort the issues out. 
+I also had difficulty getting my welcome, game over and winner screen to appear correctly. They would be pushed down due to the order they sit in my HTML. I learnt about using the Z-index and using absolute positioning to sort the issues out.
 
 There were times when I should have tried to figure out things on my own and other times when I should have asked for help earlier. Getting the balance was a little difficult for me in this project but has definitely helped me understand how to make my process more effective.
 

@@ -11,7 +11,7 @@ header {
   width: 900px;
   height: 580px;
   margin: 10px auto;
-  background-color: cornflowerblue;
+  background-image: url(../../public/assets/gamebackground.jpg);
   // background-image: url(../../public/assets/background.jpg);
   box-shadow: 0px 0px 5px #414141;
   margin: 70px 10px;
@@ -235,6 +235,7 @@ header {
   border-radius: 50px;
   line-height: 15px;
   font-size: 20px;
+  with: 100px;
 
 }
 
@@ -297,6 +298,7 @@ header {
 
 body {
   background-color: cornsilk;
+
 }
 
 #movie_picture {
