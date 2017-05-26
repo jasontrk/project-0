@@ -1,78 +1,69 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1: The Game
-
-### Overview
-
-Let's start out with something fun - **a game!**
-
-Everyone will get a chance to **be creative**, and work through some really **tough programming challenges** – since you've already gotten your feet wet with Tic Tac Toe, it's up to you to come up with a fun and interesting game to build.
-
-**You will be working individually for this project**, but we'll be guiding you along the process and helping as you go. Show us what you've got!
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1[0]: GUESS THAT MOVIE
 
 
----
+### Play Game
+To run the game hosted on Heroku: https://guarded-journey-61209.herokuapp.com/.
 
-### Technical Requirements
+----
+### Installation
 
-Your app must:
+To download or clone repo please visit:
+https://github.com/jasontrk/project-0.
 
-* **Render a game in the browser**
-* **Switch turns** between two players
-* **Design logic for winning** & **visually display which player won**
-* **Include separate HTML / CSS / JavaScript files**
-* Stick with **KISS (Keep It Simple Stupid)** and **DRY (Don't Repeat Yourself)** principles
-* Use **Javascript or jQuery** for **DOM manipulation**
-* **Deploy your game online**, where the rest of the world can access it
-* Use **semantic markup** for HTML and CSS (adhere to best practices)
+Use ```npm i``` to install dependancies.
+
+Run ```gulp``` to compile source code and run in browser.
 
 ---
 
-### Necessary Deliverables
+### About the Game/Instructions
 
-* A **working game, built by you**, hosted somewhere on the internet
-* A **link to your hosted working game** in the URL section of your Github repo
-* A **git repository hosted on Github**, with a link to your hosted game, and frequent commits dating back to the very beginning of the project
-* **A ``readme.md`` file** with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
+**GUESS THAT MOVIE**
 
----
-
-### Suggested Ways to Get Started
-
-* **Break the project down into different components** (data, presentation, views, style, DOM manipulation) and brainstorm each component individually. Use whiteboards!
-* **Use your Development Tools** (console.log, inspector, alert statements, etc) to debug and solve problems
-* Work through the lessons in class & ask questions when you need to! Think about adding relevant code to your game each night, instead of, you know... _procrastinating_.
-* **Commit early, commit often.** Don’t be afraid to break something because you can always go back in time to a previous version.
-* **Consult documentation resources** (MDN, jQuery, etc.) at home to better understand what you’ll be getting into.
-* **Don’t be afraid to write code that you know you will have to remove later.** Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
+The concept of this movie trivia game is very simple; click on each letter of a scrambled movie title to form the unscrambled title. Clicked the wrong letter? Simply click it again to return it back to the scrambled pile. You will have the aid of an artistic poster, a theme song from the movie in question and should you need it, a hint. You have 30 seconds to guess each movie. When the time runs out, you lose! There are currently 9 questions and each title gets harder and harder to unscramble.
 
 ---
 
-### Useful Resources
+### Technlogies Used
 
-* **[MDN Javascript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** _(a great reference for all things Vanilla Javascript)_
-* **[jQuery Docs](http://api.jquery.com)** _(if you're using jQuery)_
-* **[Github Pages](https://pages.github.com)** _(for hosting your game)_
+* HTML 5
+* SCSS
+* JavaScript ES6
+* jQuery 3.10
+* Gulp
+* NPM
+* Git & Github
 
 ---
 
-### Project Feedback + Evaluation
+### Challenges
 
-* __Project Workflow__: Did you complete the user stories, wireframes, task tracking, and/or ERDs, as specified above? Did you use source control as expected for the phase of the program you’re in (detailed above)?
+Being my first project using JavaScript, I faced quite a few challenges as I hadn't fully grasped the fundamentals. However, doing the project itself helped me to relearn aspects I hadn't grasped as well as putting my existing knowledge into practice.
 
-* __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
+Using console.log was quite key to getting me through the project to test what was exactly happening when things didn't work as I expected it to.
 
-* __Creativity__: Did you add a personal spin or creative element into your project submission? Did you deliver something of value to the end user (not just a login button and an index page)?
+My first real challenge was understanding how to have my game run through a list of movies with specific audio and image files in a specific order. Although it may be obvious, I did not think it was as simple as adding properties to values within a single variable. It was the first time I was really practicing linking javascript to insert things into text or image containers.
 
-* __Code Quality__: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors have in class?
+A big challenge was fixing my Funct-eption'esque code. I spent hours trying to stop functions clashing with each other as I had functions within functions, some of which were in loops. Examples of the issues were when my letters would be duplicated and progress bar visually behaving erratic like it was moving to a dubstep beat. My instructor, Mike, rescued my code by pulling functions out of my main 'runGame' function and in the end, there wasn't even a function left in it! I wasted some time due to simple syntax errors such as forgetting to put in a capital letter or invoking functions. Going forward, this experience will make me aware of doing these things correctly.
 
-* __Deployment__: Did you deploy your application to a public url using GitHub Pages?
+I also had difficulty getting my welcome, game over and winner screen to appear correctly. They would be pushed down due to the order they sit in my HTML. I learnt about using the Z-index and using absolute positioning to sort the issues out. 
 
-* __Total__: Your instructors will give you a total score on your project between:
+There were times when I should have tried to figure out things on my own and other times when I should have asked for help earlier. Getting the balance was a little difficult for me in this project but has definitely helped me understand how to make my process more effective.
 
-    Score | Expectations
-    ----- | ------------
-    **0** | _Incomplete._
-    **1** | _Does not meet expectations._
-    **2** | _Meets expectations, good job!_
-    **3** | _Exceeds expectations, you wonderful creature, you!_
+---
 
- This will serve as a helpful overall gauge of whether you met the project goals, but __the more important scores are the individual ones__ above, which can help you identify where to focus your efforts for the next project!
+### Improvements
+
+There are quite a few aspects of the game I'd like to improve.
+
+To my code:
+* Define more consts to simplify my code and reduce any clutter.
+* Add namespacing.
+
+To my game:
+* Make it responsive. Currently it looks like a game made made in the early 2000s.
+* Add audio to the welcome, game over and winner game screens.
+* Add a delay before the next round starts. Currently, when the user clicks on the correct last letter, the round changes before the user can really see the entire completed word.
+* I would definitely like to add more CSS to the game as it looks relatively basic.
+* Separate the game into two difficulty levels.
+* Change the amount of seconds per title. i.e give 10 seconds to the small titles and gradually increase to 30 seconds for the tougher titles.  

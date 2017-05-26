@@ -54,11 +54,12 @@ $(() => {
     audio: 'batmanvssuperman',
     hint: 'BvS: Dawn of Justice'
   }];
-
+// linking current index to current title so it runs through the array in order.
   let currentIndex = 0;
   let currentTitle = movieTitles[currentIndex];
   let timerId = null;
 
+// adding countdown timer function and declaring what to do when the itme runs out
   function progress(timeleft, timetotal, $element) {
     clearTimeout(timerId);
     var progressBarWidth = timeleft * $element.width() / timetotal;
@@ -78,12 +79,12 @@ $(() => {
   }
 
   console.log('Movie:', currentTitle);
-
+//when you answer question correctly
   function congrats() {
     $letters.html('');
     $result.html('Nice. <br>On to the next one.');
-
   }
+  // clear previous title letters before adding new title letters
   function clearLetters() {
     $letters.html('');
     $result.html('');
@@ -159,7 +160,7 @@ $(() => {
       audio.play();
       congrats();
 
-
+      // move on to the next title function and call on clear letters function. If no titles left, execute win screen logic 
       if (currentIndex < movieTitles.length - 1) {
         currentIndex++;
         currentTitle = movieTitles[currentIndex];
