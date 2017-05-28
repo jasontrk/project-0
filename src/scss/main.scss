@@ -14,7 +14,7 @@ header {
   background-image: url(../../public/assets/gamebackground.jpg);
   // background-image: url(../../public/assets/background.jpg);
   box-shadow: 0px 0px 5px #414141;
-  margin: 70px 10px;
+  margin-top: 8%;
 }
 
 //welcome page
@@ -22,12 +22,14 @@ header {
   width: 900px;
   height: 580px;
   margin: 10px auto;
-  background-color: cornflowerblue;
+  background-color: #3498DB;
   box-shadow: 0px 0px 5px #414141;
   margin: 0px 0px;
   overflow: hidden;
   position: absolute;
   z-index: 2;
+  font-family: Century Gothic, sans-serif;
+
 
   #logo1 {
     padding-left: 320px;
@@ -40,6 +42,8 @@ header {
     text-transform: uppercase;
     margin: -20px 0;
     padding: 50px;
+    font-family: Century Gothic, sans-serif;
+
 
   }
   &.welcome.hide {
@@ -84,6 +88,8 @@ header {
 
 .winner {
   margin: -60px 0px;
+  font-family: Century Gothic, sans-serif;
+
   #logo4 {
     margin-left: 320px;
     margin-top: 20px;
@@ -98,6 +104,8 @@ header {
 }
 .gameRunning {
   margin: -60px 0px;
+  font-family: Century Gothic, sans-serif;
+
   #logo2 {
     position: absolute;
     margin-left: 350px;
@@ -111,12 +119,14 @@ header {
   display: none;
   width: 900px;
   height: 580px;
-  background-color: cornflowerblue;
+  background-color: #3498DB;
   box-shadow: 0px 0px 5px #414141;
   margin: -60px 0px;
   // overflow: hidden;
   // position: absolute;
   z-index: 1;
+  font-family: Century Gothic, sans-serif;
+
 
   & p {
     margin:0;
@@ -125,6 +135,8 @@ header {
     text-align: center;
     text-transform: uppercase;
     margin: 55px 0px;
+    font-family: Century Gothic, sans-serif;
+
   }
 
   &.gameover.hide {
@@ -132,12 +144,36 @@ header {
   }
   & button {
     display: block;
-    margin: -20px auto;
+    margin: -17px auto;
     color: black;
     padding: 20px;
     box-shadow: 0px 0px 5px black;
     border: 2px solid;
     border-radius: 25px;
+    display: inline-block;
+    display:block;
+    position: relative;
+    background-color: #f6e1a6;
+    background: linear-gradient(to bottom, #d8bd72, #fae1a6);
+    height: 30px;
+    width: 100px;
+
+    border-radius: 7px;
+    box-shadow: 0px 3px 5px #000;
+    border-top-width: 1px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #f8e6b1;
+    border-right-color: #f8e6b1;
+    border-bottom-color: #cab06b;
+    border-left-color: #f8e6b1;
+    user-select: none;
+    cursor: pointer;
 
   }
 }
@@ -146,12 +182,14 @@ header {
   display: none;
   width: 900px;
   height: 580px;
-  background-color: cornflowerblue;
+  background-color: #3498DB;
   box-shadow: 0px 0px 5px #414141;
   margin: -60px 0px;
   // overflow: hidden;
   position: absolute;
   z-index: 0;
+  font-family: Century Gothic, sans-serif;
+
 
   & p {
     margin:0;
@@ -160,6 +198,8 @@ header {
     text-align: center;
     text-transform: uppercase;
     margin: 55px 0px;
+    font-family: Century Gothic, sans-serif;
+
   }
 
 
@@ -169,19 +209,43 @@ header {
   }
   & button {
     display: block;
-    margin: -20px auto;
+    margin: -17px auto;
     color: black;
     padding: 20px;
     box-shadow: 0px 0px 5px black;
     border: 2px solid;
     border-radius: 25px;
+    display: inline-block;
+    display:block;
+    position: relative;
+    background-color: #f6e1a6;
+    background: linear-gradient(to bottom, #d8bd72, #fae1a6);
+    height: 30px;
+    width: 100px;
+
+    border-radius: 7px;
+    box-shadow: 0px 3px 5px #000;
+    border-top-width: 1px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #f8e6b1;
+    border-right-color: #f8e6b1;
+    border-bottom-color: #cab06b;
+    border-left-color: #f8e6b1;
+    user-select: none;
+    cursor: pointer;
 
   }
 }
 
 #progressBar {
   height: 22px;
-  background-color: red;
+  background-color: #8E2800;
   color: black;
   width: 40%;
   margin: -27px 95px;
@@ -193,28 +257,28 @@ header {
   padding: 0;
   line-height: 22px;
   width: 0;
-  background-color: #4CAF50;
+  background-color: #468966;
   box-sizing: border-box;
 }
 
 /* Dropdown Button */
 .dropbtn, .restart {
   -moz-box-shadow: 0px 10px 14px -7px #3e7327;
-	-webkit-box-shadow: 0px 10px 14px -7px #3e7327;
-	box-shadow: 0px 10px 14px -7px #3e7327;
-	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-	background-color:#77b55a;
-	border-radius:4px;
-	border:1px solid #4b8f29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:13px;
-	font-weight:bold;
-	padding:6px 12px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #5b8a3c;
+  -webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background:linear-gradient(to bottom, #468966 5%, #72b352 100%);
+  background-color:#468966;
+  border-radius:4px;
+  border:1px solid #4b8f29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family: Century Gothic, sans-serif;
+  font-size:13px;
+  font-weight:bold;
+  padding:6px 12px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #5b8a3c;
 
 }
 
@@ -222,6 +286,8 @@ header {
 .dropdown {
   position: relative;
   display: inline-block;
+  font-family: Century Gothic, sans-serif;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -229,19 +295,20 @@ header {
   display: none;
   position: fixed;
   margin: -65px -50px;
-  background-color: #f9f9f9;
+  background-color: #B64926;
   // z-index: 2;
   border: 5px;
   border-radius: 50px;
   line-height: 15px;
   font-size: 20px;
   with: 100px;
+  font-family: Century Gothic, sans-serif;
 
 }
 
 
 /* Change color of dropdown links on hover */
-.dropdownContent a:hover {background-color: #f1f1f1}
+.dropdownContent a:hover {background-color: #B64926}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdownContent {
@@ -251,7 +318,7 @@ header {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #B64926;
 }
 
 #result_list, #letters_list {
@@ -294,11 +361,18 @@ header {
   margin: 34px 40px;
 }
 
-
-
 body {
-  background-color: cornsilk;
+  background-color: #ECF0F1;
+  }
 
+footer {
+  line-height: 18px;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: -20px 0;
+  padding: 50px;
+  font-family: Century Gothic, sans-serif;
 }
 
 #movie_picture {
@@ -306,9 +380,9 @@ body {
   height: 330px;
   display: inline-block;
   margin: 155px 45px;
-  border-color: brown;
+
   border-radius: 10px;
-  border:5px white solid;
+  border:5px #B64926 solid;
 }
 
 #movie_title {
