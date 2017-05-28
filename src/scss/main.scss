@@ -41,8 +41,9 @@ header {
     text-align: center;
     text-transform: uppercase;
     margin: -20px 0;
-    padding: 50px;
+    padding: 30px;
     font-family: Century Gothic, sans-serif;
+    margin-bottom: 15px;
 
 
   }
@@ -296,6 +297,7 @@ header {
   position: fixed;
   margin: -65px -50px;
   background-color: #B64926;
+  opacity: 0.9;
   // z-index: 2;
   border: 5px;
   border-radius: 50px;
