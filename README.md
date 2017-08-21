@@ -18,6 +18,8 @@ Run ```gulp``` to compile source code and run in browser.
 
 ### About the Game/Instructions
 
+# ![](https://s3-eu-west-1.amazonaws.com/wdi27imageupload/guessinggame.png)
+
 **GUESS THAT MOVIE**
 
 The concept of this movie trivia game is very simple; click on each letter of a scrambled movie title to form the unscrambled title. Clicked the wrong letter? Simply click it again to return it back to the scrambled pile. You will have the aid of an artistic poster, a theme song from the movie in question and should you need it, a hint. You have 30 seconds to guess each movie. When the time runs out, you lose! There are currently 9 questions and each title gets harder and harder to unscramble.
