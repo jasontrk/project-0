@@ -18,7 +18,7 @@ Run ```gulp``` to compile source code and run in browser.
 
 ### About the Game/Instructions
 
-# ![](https://s3-eu-west-1.amazonaws.com/wdi27imageupload/guessinggame.png)
+# ![](https://s3-eu-west-1.amazonaws.com/wdi27imageupload/Screen+Shot+2017-08-17+at+22.20.28.png)
 
 **GUESS THAT MOVIE**
 
