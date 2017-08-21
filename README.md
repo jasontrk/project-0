@@ -38,15 +38,15 @@ The concept of this movie trivia game is very simple; click on each letter of a 
 
 ### Challenges
 
-Being my first project using JavaScript, I faced quite a few challenges as I hadn't fully grasped the fundamentals. However, doing the project itself helped me to relearn aspects I hadn't grasped as well as putting my existing knowledge into practice.
-
-Using console.log was quite key to getting me through the project to test what was exactly happening when things didn't work as I expected it to.
+Being my first project using JavaScript, I found the process quite challenging. However, doing the project on my own helped me to relearn aspects I hadn't quite fully grasped during my course lessons.
 
 My first real challenge was understanding how to have my game run through a list of movies with specific audio and image files in a specific order. Although it may be obvious, I did not think it was as simple as adding properties to values within a single variable. It was the first time I was really practicing linking javascript to insert things into text or image containers.
 
-A big challenge was fixing my Funct-eption'esque code. I spent hours trying to stop functions clashing with each other as I had functions within functions, some of which were in loops. Examples of the issues were when my letters would be duplicated and progress bar visually behaving erratic like it was moving to a dubstep beat. My instructor, Mike, rescued my code by pulling functions out of my main 'runGame' function and in the end, there wasn't even a function left in it! I wasted some time due to simple syntax errors such as forgetting to put in a capital letter or invoking functions. Going forward, this experience will make me aware of doing these things correctly.
+A big challenge was fixing my inception'esque code. I spent hours trying to stop functions clashing with each other as I had mistakenly added functions within functions, some of which were in loops. 
 
 I also had difficulty getting my welcome, game over and winner screen to appear correctly. They would be pushed down due to the order they sit in my HTML. I learnt about using the Z-index and using absolute positioning to sort the issues out.
+
+My main challenge was creating an animated countdown bar. I was a bit overwhelmed initially but after reading multiple stackoverflow posts, I started to realise how to pseudocode and then solve the problem - although it did take me longer than I would have liked.
 
 There were times when I should have tried to figure out things on my own and other times when I should have asked for help earlier. Getting the balance was a little difficult for me in this project but has definitely helped me understand how to make my process more effective.
 
@@ -57,13 +57,12 @@ There were times when I should have tried to figure out things on my own and oth
 There are quite a few aspects of the game I'd like to improve.
 
 To my code:
-* Define more consts to simplify my code and reduce any clutter.
+* Simplify my code and reduce any clutter.
 * Add namespacing.
 
 To my game:
-* Make it responsive. Currently it looks like a game made made in the early 2000s.
+* Make it responsive and completely restyle it.
 * Add audio to the welcome, game over and winner game screens.
 * Add a delay before the next round starts. Currently, when the user clicks on the correct last letter, the round changes before the user can really see the entire completed word.
-* I would definitely like to add more CSS to the game as it looks relatively basic.
 * Separate the game into two difficulty levels.
 * Change the amount of seconds per title. i.e give 10 seconds to the small titles and gradually increase to 30 seconds for the tougher titles.  
